@@ -1,11 +1,13 @@
-package rest;
+package com.example.dependency.rest;
 
 import jakarta.annotation.PostConstruct;
-import model.Developer;
+import com.example.dependency.model.Developer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import tax.Taxable;
+import com.example.dependency.tax.Taxable;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -14,12 +16,20 @@ import java.util.Map;
 @RestController
 public class DeveloperController {
 private Taxable tax;
+
+   @Value("${instructor.name}")
+   private String name;
+   @Value("${instructor.surname}")
+   private String surname;
    private Map<Integer, Developer> developers;
    @PostConstruct
    public void init(){
       developers=new HashMap<>();
    }
-
+   @GetMapping("/welcome")
+   public String welcome(){
+      return name+""+surname+ "says hi";
+   }
    @Autowired
    public DeveloperController(@Qualifier ("developerTax") Taxable taxable){
 

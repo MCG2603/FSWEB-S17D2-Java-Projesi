@@ -1,4 +1,4 @@
-package tax;
+package com.example.dependency.tax;
 
 public interface Taxable {
 

@@ -1,14 +1,14 @@
-package model;
+package com.example.dependency.model;
 
 public class Developer {
 
     private int id;
     private String name;
     private String salary;
-    private Enum experience;
+    private Experience experience;
 
 
-    public Developer(int id, String name, String salary, Enum experience) {
+    public Developer(int id, String name, String salary, Experience experience) {
         this.id = id;
         this.name = name;
         this.salary = salary;
@@ -27,7 +27,7 @@ public class Developer {
         return salary;
     }
 
-    public Enum getExperience() {
+    public Experience getExperience() {
         return experience;
     }
 
@@ -43,7 +43,7 @@ public class Developer {
         this.salary = salary;
     }
 
-    public void setExperience(Enum experience) {
+    public void setExperience(Experience experience) {
         this.experience = experience;
     }
 }

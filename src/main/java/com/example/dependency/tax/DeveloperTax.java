@@ -1,4 +1,8 @@
-package tax;
+package com.example.dependency.tax;
+
+import org.springframework.stereotype.Component;
+
+@Component
 
 public class DeveloperTax implements Taxable{
 
